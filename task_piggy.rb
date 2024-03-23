@@ -7,7 +7,7 @@ class TaskPiggy < Formula
   
     def install
       system "gem", "install", "bundler"
-      system "bundle", "install"
+      system "bundle", "config", "set", "--local", "without", "production"
       bin.install "app/main.rb" => "task-piggy"
     end
   
