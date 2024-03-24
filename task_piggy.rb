@@ -10,13 +10,6 @@ class TaskPiggy < Formula
       url "https://rubygems.org/downloads/thor-1.3.0.gem"
       sha256 "1adc7f9e5b3655a68c71393fee8bd0ad088d14ee8e83a0b73726f23cbb3ca7c3"
     end
-  
-    def install
-      system "gem", "install", "bundler"
-      system "bundle", "config", "set", "--local", "without", "production"
-      bin.install "app/main.rb" => "task-piggy"
-    end
-
 
     def install
       ENV["GEM_HOME"] = libexec
